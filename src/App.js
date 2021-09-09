@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Address from './components/Address';
 
-function App() {
+const App = () => {
+  const [addressLine, setAddressLine] = useState({
+    addressLine1: '12 Nightingale Way',
+    addressLine2: 'London',
+    addressLine3: 'E6 5JU',
+  });
+
+  // ('12 Nightingale Way, London, E6 5JU');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Address addressLine={addressLine} setAddressLine={setAddressLine} />
+    </>
   );
-}
+};
 
 export default App;
